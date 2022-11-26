@@ -1,0 +1,54 @@
+/*********************************************
+
+CSS styles
+
+**********************************************/
+
+:root {
+  --beige: #FFEDE1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--beige);
+}
+
+/* Center all content in middle of page */
+#content-wrapper {
+  /* background: red; */
+  max-width: 800px;
+  margin: 0 auto;
+
+}
+
+/**********************
+Hero section
+***********************/
+
+#hero {
+  /* background: green; */
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1#title {
+  text-align: center;
+  /* background: orange; */
+  font-size: 4rem;
+}
+
+
+/**********************
+Introduction section
+***********************/
+
+#introduction p {
+  font-size: 1.5rem;
+}
