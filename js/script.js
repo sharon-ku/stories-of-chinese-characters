@@ -1,12 +1,26 @@
 /**
-Title of Project
-Author Name
+Stories of Chinese Characters
+Sharon Ku
 
-This is a template. You must fill in the title,
-author, and this description to match your project!
+JavaScript
 */
 
 "use strict";
+
+
+
+$(`#bird-arrow`).hover(birdFastFlapping, birdNormalFlapping);
+
+
+function birdFastFlapping() {
+    $(`#bird-arrow`).attr(`src`, `assets/images/bird-fly-fast.gif`);
+}
+
+function birdNormalFlapping() {
+    $(`#bird-arrow`).attr(`src`, `assets/images/bird-fly-normal.gif`);
+}
+
+
 
 
 /**
