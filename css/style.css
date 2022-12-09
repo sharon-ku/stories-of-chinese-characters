@@ -31,6 +31,39 @@ body {
 }
 
 /**********************
+Nav section
+***********************/
+
+nav {
+  display: flex;
+  width: 100%;
+  background: green;
+}
+
+#nav-about {
+  position: absolute;
+  right: 0px;
+  margin: 40px;
+  padding: 15px 10px;
+  /* background: red; */
+
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  font-size: 1rem;
+
+  transition: all 0.51s;
+
+  height: 50px;
+  width: 100px;
+}
+
+#nav-about:hover {
+  font-size: 1.5rem;
+}
+
+/**********************
 Hero section
 ***********************/
 
@@ -70,4 +103,5 @@ Introduction section
   text-align: center;
 
   margin-top: 30vh;
+  margin-bottom: 30vh;
 }
