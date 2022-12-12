@@ -7,6 +7,9 @@ CSS styles
 /* Crimson Text font */
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap");
 
+/* Noto Serif Hong Kong */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+HK&display=swap");
+
 :root {
   --beige: #ffede1;
 }
@@ -15,12 +18,12 @@ CSS styles
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Crimson Text", serif;
 }
 
 body {
   /* background: var(--beige); */
   height: 3000px;
+  font-family: "Crimson Text", serif;
 }
 
 /* Center all content in middle of page */
@@ -35,12 +38,22 @@ body {
 Canvas
 ***********************/
 canvas {
-  background: red;
+  /* background: red; */
   width: 100%;
   height: 100vh;
   position: absolute;
   top: 0;
   z-index: -1;
+}
+
+/**********************
+Crinkled paper
+***********************/
+figure#crinkled-paper {
+  /* background: red; */
+  position: fixed;
+  pointer-events: none;
+  z-index: 1;
 }
 
 /**********************
@@ -91,22 +104,59 @@ Hero section
 }
 
 #title {
-  text-align: center;
   /* background: orange; */
+
+  text-align: center;
+  height: 250px;
+  width: 500px;
+  z-index: 0;
+
   font-size: 5.5rem;
   font-weight: 500;
   line-height: 5rem;
+
+  animation-name: blur-effect;
+  animation-duration: 10s;
+  animation-iteration-count: 1;
+
+  /*font-family: "Noto Serif HK", serif; */
+
+  /* filter: blur(4px); */
+}
+
+#title:hover {
+  cursor: pointer;
+}
+
+.chinese {
+  font-family: "Noto Serif HK", serif;
+}
+
+@keyframes blur-effect {
+  0% {
+    color: transparent;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    color: transparent;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.7);
+  }
+  100% {
+    color: transparent;
+    text-shadow: 0 0 0px rgba(0, 0, 0, 1);
+  }
 }
 
 .title-line {
   /* background: red; */
+  padding-bottom: 5px;
 }
 
 #title-stories {
   margin-right: 100px;
 }
 
-#title-of {
+#title-of-chinese {
   font-style: italic;
   margin-left: 100px;
   /* background: cornflowerblue; */

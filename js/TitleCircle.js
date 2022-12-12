@@ -1,6 +1,6 @@
-// Dust particle
+// Floating circles in title
 
-class Dust {
+class TitleCircle {
   constructor() {
     this.x = random(0, width);
     this.y = random(0, height);
@@ -8,8 +8,12 @@ class Dust {
     this.vy = 0;
     this.speed = 0.5;
 
-    this.size = random(2, 5);
-    this.fill = 255;
+    this.size = random(10, 50);
+    this.fill = {
+      r: random(125, 255),
+      g: random(125, 255),
+      b: random(125, 255),
+    };
   }
 
   update() {
@@ -19,8 +23,10 @@ class Dust {
 
   display() {
     push();
-    fill(this.fill);
+    fill(this.fill.r, this.fill.g, this.fill.b);
+    drawingContext.filter = `blur(8px)`;
     ellipse(this.x, this.y, this.size);
+
     pop();
   }
 

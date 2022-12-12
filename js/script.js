@@ -1,9 +1,9 @@
-/**
+/********************************
 Stories of Chinese Characters
 Sharon Ku
 
 JavaScript for p5 canvas
-*/
+*********************************/
 
 "use strict";
 
@@ -11,11 +11,15 @@ JavaScript for p5 canvas
 let centerX;
 
 // Canvas height never changes
-let canvasHeight = 3000;
+let canvasHeight = 8000;
 
 // Dust particles
 let numDustParticles = 100;
 let dustParticles = [];
+
+// Title circles
+let numCircles = 20;
+let titleCircles = [];
 
 // Fish
 let numFishImages = 5;
@@ -23,6 +27,10 @@ let fishImages = [];
 let fishBgImage;
 
 let fishCharacters = [];
+
+let puddles = [];
+let numPuddles = 5;
+let puddleImage;
 
 // Background color: beige #ffede1
 let bgFill = {
@@ -42,6 +50,7 @@ function preload() {
   }
 
   fishBgImage = loadImage(`assets/images/fish/fish-bg.png`);
+  puddleImage = loadImage(`assets/images/fish/fish-puddle.png`);
 }
 
 /**
@@ -62,6 +71,21 @@ function setup() {
     dustParticles.push(dust);
   }
 
+  // Create title circles
+  for (let i = 0; i < numCircles; i++) {
+    let circle = new TitleCircle();
+    titleCircles.push(circle);
+  }
+
+  // Create puddles
+  for (let i = 0; i < numPuddles; i++) {
+    let x = centerX;
+    let firstY = 1500;
+    let yDistance = 200;
+    let puddle = new Puddle(x, firstY + i * yDistance, puddleImage);
+    puddles.push(puddle);
+  }
+
   // Create fish characters
   for (let i = 0; i < fishImages.length; i++) {
     let x = centerX;
@@ -74,7 +98,7 @@ function setup() {
     );
     fishCharacters.push(fishCharacter);
   }
-}
+} // setup() end
 
 /**
 Updates every frame
@@ -82,9 +106,17 @@ Updates every frame
 function draw() {
   background(bgFill.r, bgFill.g, bgFill.b);
 
-  for (let i = 0; i < dustParticles.length; i++) {
-    dustParticles[i].update();
-  }
+  // for (let i = 0; i < titleCircles.length; i++) {
+  //   titleCircles[i].update();
+  // }
+
+  // Draw title bg image
+  push();
+  imageMode(CENTER);
+  translate(centerX, 370);
+  scale(1.5, 0.5);
+  image(fishBgImage, 0, 0);
+  pop();
 
   // Draw fish bg image
   push();
@@ -92,14 +124,25 @@ function draw() {
   image(
     fishBgImage,
     centerX,
-    1500 + 200 * (fishImages.length / 2) - fishImages[0].height / 2
+    1500 + 200 * (fishImages.length / 2) - fishImages[0].height / 3
   );
   pop();
 
+  // Update puddles
+  for (let i = 0; i < puddles.length; i++) {
+    puddles[i].update();
+  }
+
+  // Update fish characters
   for (let i = 0; i < fishCharacters.length; i++) {
     fishCharacters[i].update();
   }
-}
+
+  // Update dust particles
+  for (let i = 0; i < dustParticles.length; i++) {
+    dustParticles[i].update();
+  }
+} // draw() end
 
 /**
 Resize canvas
