@@ -90,10 +90,30 @@ Hero section
   flex-flow: column;
 }
 
-h1#title {
+#title {
   text-align: center;
   /* background: orange; */
-  font-size: 4rem;
+  font-size: 5.5rem;
+  font-weight: 500;
+  line-height: 5rem;
+}
+
+.title-line {
+  /* background: red; */
+}
+
+#title-stories {
+  margin-right: 100px;
+}
+
+#title-of {
+  font-style: italic;
+  margin-left: 100px;
+  /* background: cornflowerblue; */
+}
+
+#title-characters {
+  margin-right: 50px;
 }
 
 #bird-arrow {

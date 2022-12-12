@@ -2,7 +2,7 @@
 Stories of Chinese Characters
 Sharon Ku
 
-JavaScript
+JavaScript for p5 canvas
 */
 
 "use strict";
@@ -30,16 +30,6 @@ let bgFill = {
   g: 237,
   b: 225,
 };
-
-$(`#bird-arrow`).hover(birdFastFlapping, birdNormalFlapping);
-
-function birdFastFlapping() {
-  $(`#bird-arrow`).attr(`src`, `assets/images/bird-fly-fast.gif`);
-}
-
-function birdNormalFlapping() {
-  $(`#bird-arrow`).attr(`src`, `assets/images/bird-fly-normal.gif`);
-}
 
 /**
 Preload assets
@@ -95,6 +85,16 @@ function draw() {
   for (let i = 0; i < dustParticles.length; i++) {
     dustParticles[i].update();
   }
+
+  // Draw fish bg image
+  push();
+  imageMode(CENTER);
+  image(
+    fishBgImage,
+    centerX,
+    1500 + 200 * (fishImages.length / 2) - fishImages[0].height / 2
+  );
+  pop();
 
   for (let i = 0; i < fishCharacters.length; i++) {
     fishCharacters[i].update();
