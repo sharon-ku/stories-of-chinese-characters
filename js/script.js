@@ -24,7 +24,7 @@ let titleCircles = [];
 // Fish
 let numFishImages = 5;
 let fishImages = [];
-let fishFirstY = 1900;
+let fishFirstY = 1950;
 let fishBgImage;
 
 let fishCharacters = [];
