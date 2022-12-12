@@ -66,10 +66,12 @@ figure#crinkled-paper {
   z-index: 1;
 
   width: 100%;
+  height: 100vh;
 }
 
 #crinkled-paper img {
   width: 100%;
+  height: 100%;
 }
 
 /**********************
@@ -127,7 +129,7 @@ Hero section
   text-align: center;
   height: 250px;
   width: 500px;
-  z-index: 0;
+  z-index: 1;
 
   font-size: 5.8rem;
   font-weight: 500;
@@ -205,8 +207,8 @@ Introduction section
   font-size: 1.9rem;
   text-align: center;
 
-  margin-top: 225px;
-  margin-bottom: 270px;
+  margin-top: 400px;
+  margin-bottom: 330px;
 
   /* padding: 0 30px; */
   /* background: red; */
@@ -224,7 +226,7 @@ Characters
 }
 
 .character-spacing {
-  height: 1300px;
+  height: 1380px;
 }
 
 /**********************

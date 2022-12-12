@@ -24,6 +24,7 @@ let titleCircles = [];
 // Fish
 let numFishImages = 5;
 let fishImages = [];
+let fishFirstY = 1900;
 let fishBgImage;
 
 let fishCharacters = [];
@@ -36,6 +37,7 @@ let puddleImage;
 let numMountainImages = 5;
 let mountainImages = [];
 let mountainBgImage;
+let mountainFirstY = 3300;
 
 let mountainCharacters = [];
 
@@ -95,7 +97,7 @@ function setup() {
   // Create puddles
   for (let i = 0; i < numPuddles; i++) {
     let x = centerX;
-    let firstY = 1700;
+    let firstY = fishFirstY;
     let yDistance = 200;
     let puddle = new Puddle(x, firstY + i * yDistance, puddleImage);
     puddles.push(puddle);
@@ -104,7 +106,7 @@ function setup() {
   // Create fish characters
   for (let i = 0; i < fishImages.length; i++) {
     let x = centerX;
-    let firstY = 1700;
+    let firstY = fishFirstY;
     let yDistance = 200;
     let fishCharacter = new FishCharacter(
       x,
@@ -117,7 +119,7 @@ function setup() {
   // Create mountain characters
   for (let i = 0; i < mountainImages.length; i++) {
     let x = centerX;
-    let firstY = 3000;
+    let firstY = mountainFirstY;
     let yDistance = 200;
     let mountainCharacter = new MountainCharacter(
       x,
@@ -159,7 +161,7 @@ function draw() {
   image(
     fishBgImage,
     centerX,
-    1700 + 200 * (fishImages.length / 2) - fishImages[0].height / 3
+    fishFirstY + 200 * (fishImages.length / 2) - fishImages[0].height / 3
   );
   pop();
 
@@ -179,7 +181,9 @@ function draw() {
   image(
     mountainBgImage,
     centerX,
-    3000 + 200 * (mountainImages.length / 2) - mountainImages[0].height / 3
+    mountainFirstY +
+      200 * (mountainImages.length / 2) -
+      mountainImages[0].height / 3
   );
   pop();
 
