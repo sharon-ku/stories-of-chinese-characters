@@ -1,7 +1,7 @@
 # Stories of Chinese Characters
 By Sharon Ku
 
-☆ Website: https://sharon-ku.github.io/stories-of-chinese-characters/index.html
+☆ Website: https://sharon-ku.github.io/stories-of-chinese-characters/
 
 ---
 
