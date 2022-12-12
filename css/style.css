@@ -68,6 +68,10 @@ figure#crinkled-paper {
   width: 100%;
 }
 
+#crinkled-paper img {
+  width: 100%;
+}
+
 /**********************
 Nav section
 ***********************/
@@ -81,7 +85,7 @@ nav {
 #nav-about {
   position: absolute;
   right: 0px;
-  margin: 40px;
+  margin: 50px;
   padding: 15px 10px;
   /* background: red; */
 
@@ -89,16 +93,16 @@ nav {
   text-decoration: none;
   color: black;
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.2rem;
 
   transition: all 0.51s;
 
-  height: 50px;
-  width: 100px;
+  height: 80px;
+  width: 150px;
 }
 
 #nav-about:hover {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
 }
 
 /**********************
@@ -125,9 +129,9 @@ Hero section
   width: 500px;
   z-index: 0;
 
-  font-size: 5.5rem;
+  font-size: 5.8rem;
   font-weight: 500;
-  line-height: 5rem;
+  line-height: 5.2rem;
 
   animation-name: blur-effect;
   animation-duration: 10s;
@@ -198,14 +202,29 @@ Introduction section
 ***********************/
 
 #introduction p {
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   text-align: center;
 
-  margin-top: 250px;
+  margin-top: 225px;
   margin-bottom: 250px;
 
   /* padding: 0 30px; */
   /* background: red; */
+}
+
+/**********************
+Characters
+***********************/
+#fish-heading {
+  text-align: center;
+  width: 100%;
+  font-style: italic;
+  /* text-transform: uppercase; */
+  /* letter-spacing: 2px; */
+}
+
+.character-spacing {
+  height: 1300px;
 }
 
 /**********************

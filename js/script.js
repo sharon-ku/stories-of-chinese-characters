@@ -80,7 +80,7 @@ function setup() {
   // Create puddles
   for (let i = 0; i < numPuddles; i++) {
     let x = centerX;
-    let firstY = 1500;
+    let firstY = 1700;
     let yDistance = 200;
     let puddle = new Puddle(x, firstY + i * yDistance, puddleImage);
     puddles.push(puddle);
@@ -89,7 +89,7 @@ function setup() {
   // Create fish characters
   for (let i = 0; i < fishImages.length; i++) {
     let x = centerX;
-    let firstY = 1500;
+    let firstY = 1700;
     let yDistance = 200;
     let fishCharacter = new FishCharacter(
       x,
@@ -113,10 +113,17 @@ function draw() {
   // Draw title bg image
   push();
   imageMode(CENTER);
-  translate(centerX, 370);
-  scale(1.5, 0.5);
+  translate(centerX, 410);
+  scale(1.65, 0.55);
   image(fishBgImage, 0, 0);
   pop();
+
+  // // Write character
+  // push();
+  // textAlign(CENTER, CENTER);
+  //
+  // text(`FISH`, centerX, 1700 - 200);
+  // pop();
 
   // Draw fish bg image
   push();
@@ -124,7 +131,7 @@ function draw() {
   image(
     fishBgImage,
     centerX,
-    1500 + 200 * (fishImages.length / 2) - fishImages[0].height / 3
+    1700 + 200 * (fishImages.length / 2) - fishImages[0].height / 3
   );
   pop();
 
