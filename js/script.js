@@ -172,16 +172,6 @@ function draw() {
   );
   pop();
 
-  // Update puddles
-  for (let i = 0; i < puddles.length; i++) {
-    puddles[i].update();
-  }
-
-  // Update fish characters
-  for (let i = 0; i < fishCharacters.length; i++) {
-    fishCharacters[i].update();
-  }
-
   // Draw mountain bg image
   push();
   imageMode(CENTER);
@@ -193,6 +183,16 @@ function draw() {
       mountainImages[0].height / 3
   );
   pop();
+
+  // Update puddles
+  for (let i = 0; i < puddles.length; i++) {
+    puddles[i].update();
+  }
+
+  // Update fish characters
+  for (let i = 0; i < fishCharacters.length; i++) {
+    fishCharacters[i].update();
+  }
 
   // Update mountain characters
   for (let i = 0; i < mountainCharacters.length; i++) {

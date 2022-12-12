@@ -11,6 +11,10 @@ class MountainCharacter {
       y: 0.5,
     };
 
+    this.scaleMin = 0.5;
+
+    this.scaleMax = 4;
+
     this.initialX = x;
     this.initialY = y;
 
@@ -44,8 +48,7 @@ class MountainCharacter {
       // // rotate image based on mouse position
       // this.rotate();
     } else {
-      // this.x = this.initialX;
-      // this.y = this.initialY;
+      this.shrink();
     }
   }
 
@@ -65,18 +68,28 @@ class MountainCharacter {
   }
 
   widen() {
-    this.scale.x += 0.01;
+    if (this.scale.x < this.scaleMax) {
+      this.scale.x += 0.005;
+      this.scale.y += 0.005;
+    }
+  }
+
+  shrink() {
+    if (this.scale.x > this.scaleMin) {
+      this.scale.x -= 0.005;
+      this.scale.y -= 0.005;
+    }
   }
 
   // Display image
   display() {
     push();
     imageMode(CENTER);
-    translate(this.x, this.y);
+    translate(this.x, this.y + this.image.height / 2);
     scale(this.scale.x, this.scale.y);
 
-    rotate(this.angle);
-    image(this.image, 0, 0);
+    // rotate(this.angle);
+    image(this.image, 0, -this.image.height / 2);
     pop();
   }
 
