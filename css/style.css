@@ -54,6 +54,8 @@ figure#crinkled-paper {
   position: fixed;
   pointer-events: none;
   z-index: 1;
+
+  width: 100%;
 }
 
 /**********************
@@ -101,6 +103,8 @@ Hero section
   align-items: center;
 
   flex-flow: column;
+
+  margin-top: 20px;
 }
 
 #title {
@@ -118,6 +122,10 @@ Hero section
   animation-name: blur-effect;
   animation-duration: 10s;
   animation-iteration-count: 1;
+
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
 
   /*font-family: "Noto Serif HK", serif; */
 
@@ -183,8 +191,33 @@ Introduction section
   font-size: 1.8rem;
   text-align: center;
 
-  margin-top: 30vh;
-  margin-bottom: 30vh;
+  margin-top: 250px;
+  margin-bottom: 250px;
+
+  /* padding: 0 30px; */
+  /* background: red; */
+}
+
+/**********************
+About page
+***********************/
+
+#about-spacing {
+  height: 100px;
+}
+
+#about-heading {
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+#about-description p {
+  font-size: 1.8rem;
+  /* text-align: center; */
+  margin-bottom: 50px;
+
+  /* margin-top: 250px;
+  margin-bottom: 250px; */
 
   /* padding: 0 30px; */
   /* background: red; */
