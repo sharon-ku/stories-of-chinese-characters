@@ -145,6 +145,7 @@ function draw() {
   imageMode(CENTER);
   translate(centerX, 410);
   scale(1.65, 0.55);
+  // tint(255, 234, 219);
   image(fishBgImage, 0, 0);
   pop();
 
