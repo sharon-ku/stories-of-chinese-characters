@@ -124,7 +124,7 @@ function repositionPetalsRandomly() {
 
   // animate petals randomly
   $(`.petal-image`).each(function () {
-    let randomFlyingSpeed = 40 + Math.random() * 20;
+    let randomFlyingSpeed = 50 + Math.random() * 20;
     $(this).css({
       animation: `petal-fly ${randomFlyingSpeed}s linear infinite`,
       // left:
