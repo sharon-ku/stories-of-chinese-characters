@@ -206,7 +206,7 @@ Introduction section
   text-align: center;
 
   margin-top: 225px;
-  margin-bottom: 250px;
+  margin-bottom: 270px;
 
   /* padding: 0 30px; */
   /* background: red; */
@@ -215,10 +215,10 @@ Introduction section
 /**********************
 Characters
 ***********************/
-#fish-heading {
+.character-heading {
   text-align: center;
   width: 100%;
-  font-style: italic;
+  /* font-style: italic; */
   /* text-transform: uppercase; */
   /* letter-spacing: 2px; */
 }

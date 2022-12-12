@@ -32,6 +32,13 @@ let puddles = [];
 let numPuddles = 5;
 let puddleImage;
 
+// Mountain
+let numMountainImages = 5;
+let mountainImages = [];
+let mountainBgImage;
+
+let mountainCharacters = [];
+
 // Background color: beige #ffede1
 let bgFill = {
   r: 255,
@@ -51,6 +58,14 @@ function preload() {
 
   fishBgImage = loadImage(`assets/images/fish/fish-bg.png`);
   puddleImage = loadImage(`assets/images/fish/fish-puddle.png`);
+
+  // Load mountain images
+  for (let i = 0; i < numMountainImages; i++) {
+    let mountainImage = loadImage(`assets/images/mountain/mountain${i}.png`);
+    mountainImages.push(mountainImage);
+  }
+
+  mountainBgImage = loadImage(`assets/images/mountain/mountain-bg.png`);
 }
 
 /**
@@ -98,6 +113,19 @@ function setup() {
     );
     fishCharacters.push(fishCharacter);
   }
+
+  // Create mountain characters
+  for (let i = 0; i < mountainImages.length; i++) {
+    let x = centerX;
+    let firstY = 3000;
+    let yDistance = 200;
+    let mountainCharacter = new MountainCharacter(
+      x,
+      firstY + i * yDistance,
+      mountainImages[i]
+    );
+    mountainCharacters.push(mountainCharacter);
+  }
 } // setup() end
 
 /**
@@ -143,6 +171,21 @@ function draw() {
   // Update fish characters
   for (let i = 0; i < fishCharacters.length; i++) {
     fishCharacters[i].update();
+  }
+
+  // Draw mountain bg image
+  push();
+  imageMode(CENTER);
+  image(
+    mountainBgImage,
+    centerX,
+    3000 + 200 * (mountainImages.length / 2) - mountainImages[0].height / 3
+  );
+  pop();
+
+  // Update mountain characters
+  for (let i = 0; i < mountainCharacters.length; i++) {
+    mountainCharacters[i].update();
   }
 
   // Update dust particles
