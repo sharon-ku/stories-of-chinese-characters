@@ -21,6 +21,9 @@ let dustParticles = [];
 let numCircles = 20;
 let titleCircles = [];
 
+// Title bg image
+let titleBgImage;
+
 // Fish
 let numFishImages = 5;
 let fishImages = [];
@@ -52,6 +55,9 @@ let bgFill = {
 Preload assets
 */
 function preload() {
+  // Load bg image
+  titleBgImage = loadImage(`assets/images/title-bg.png`);
+
   // Load fish images
   for (let i = 0; i < numFishImages; i++) {
     let fishImage = loadImage(`assets/images/fish/fish${i}.png`);
@@ -146,7 +152,7 @@ function draw() {
   translate(centerX, 410);
   scale(1.65, 0.55);
   // tint(255, 234, 219);
-  image(fishBgImage, 0, 0);
+  image(titleBgImage, 0, 0);
   pop();
 
   // // Write character
